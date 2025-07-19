@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { CATEGORIES } from '@/data/categories';
 import { SPANISH_ALPHABET } from '@/data/words';
 import { getLetterPath } from '@/utils/routes';
 import { Category } from '@/types';

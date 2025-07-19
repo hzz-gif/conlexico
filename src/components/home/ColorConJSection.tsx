@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { getColorsByLetter } from '@/data/colors';
 import ColorCard from '@/components/color/ColorCard';
 
