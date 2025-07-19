@@ -427,7 +427,10 @@ export const COLORS_DATA: Record<Letter, ColorItem[]> = {
       example: 'Las flores lila perfumaban el aire',
       hex: '#C8A2C8',
       rgb: { r: 200, g: 162, b: 200 },
-      hsl:    {
+      hsl: { h: 300, s: 25, l: 71 },
+      slug: 'lila'
+    },
+    {
       word: 'Lino',
       definition: 'Color beige claro como la fibra natural',
       example: 'La camisa de color lino era perfecta para el verano',
@@ -435,9 +438,6 @@ export const COLORS_DATA: Record<Letter, ColorItem[]> = {
       rgb: { r: 250, g: 240, b: 230 },
       hsl: { h: 30, s: 67, l: 94 },
       slug: 'lino'
-    },
-      hsl: { h: 300, s: 25, l: 71 },
-      slug: 'lila'
     },
     {
       word: 'Lavanda',
@@ -713,7 +713,10 @@ export const COLORS_DATA: Record<Letter, ColorItem[]> = {
       example: 'La pared salmón daba calidez al cuarto',
       hex: '#FA8072',
       rgb: { r: 250, g: 128, b: 114 },
-      hsl:    {
+      hsl: { h: 6, s: 93, l: 71 },
+      slug: 'salmon'
+    },
+    {
       word: 'Sepia',
       definition: 'Color marrón amarillento como la tinta antigua',
       example: 'La fotografía sepia evocaba tiempos pasados',
@@ -721,9 +724,6 @@ export const COLORS_DATA: Record<Letter, ColorItem[]> = {
       rgb: { r: 112, g: 66, b: 20 },
       hsl: { h: 30, s: 69, l: 26 },
       slug: 'sepia'
-    },
-      hsl: { h: 6, s: 93, l: 71 },
-      slug: 'salmon'
     },
     {
       word: 'Siena',

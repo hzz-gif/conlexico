@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { CATEGORIES } from '@/data/categories';
 import { SPANISH_ALPHABET } from '@/data/words';
 import { getLetterPath } from '@/utils/routes';
+import { Category } from '@/types';
 
 const FooterAlphabetNavigation = () => {
   // 获取主要类别（按优先级排序）
@@ -40,7 +41,7 @@ const FooterAlphabetNavigation = () => {
                   {SPANISH_ALPHABET.slice(0, 13).map((letter) => (
                     <Link
                       key={letter}
-                      href={getLetterPath(category.key as any, letter)}
+                      href={getLetterPath(category.key as Category, letter)}
                       className="inline-flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded text-center transition-all duration-200 hover:scale-105"
                       rel="nofollow"
                     >
@@ -58,7 +59,7 @@ const FooterAlphabetNavigation = () => {
                   {SPANISH_ALPHABET.slice(13).map((letter) => (
                     <Link
                       key={letter}
-                      href={getLetterPath(category.key as any, letter)}
+                      href={getLetterPath(category.key as Category, letter)}
                       className="inline-flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded text-center transition-all duration-200 hover:scale-105"
                       rel="nofollow"
                     >

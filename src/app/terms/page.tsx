@@ -91,7 +91,7 @@ export default function TermsPage() {
               6. Exención de Responsabilidad
             </h2>
             <p className="text-gray-600 mb-4">
-              ConLéxico se proporciona "tal como está" sin garantías de ningún tipo. 
+              ConLéxico se proporciona &quot;tal como está&quot; sin garantías de ningún tipo.
               No garantizamos que el servicio sea ininterrumpido, seguro o libre de errores. 
               El uso del sitio es bajo tu propio riesgo.
             </p>

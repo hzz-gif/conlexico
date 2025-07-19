@@ -391,7 +391,6 @@ export const ANIMALS_DATA: Record<Letter, WordItem[]> = {
       definition: 'Anfibio similar a la rana pero más terrestre',
       example: 'El sapo sale por las noches después de la lluvia'
     },
-,
     {
       word: 'Serpiente',
       definition: 'Reptil sin patas que se desplaza reptando y puede ser venenoso o constrictora',
@@ -431,7 +430,6 @@ export const ANIMALS_DATA: Record<Letter, WordItem[]> = {
       definition: 'Criatura mítica parecida a un caballo con cuerno',
       example: 'El unicornio es un animal de leyenda'
     },
-,
     {
       word: 'Urraca',
       definition: 'Ave inteligente de la familia de los córvidos, conocida por su capacidad de imitar sonidos',

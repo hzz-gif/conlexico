@@ -118,7 +118,6 @@ export const COUNTRIES_DATA: Record<Letter, WordItem[]> = {
       definition: 'País nórdico conocido por sus saunas',
       example: 'Finlandia es la tierra de los mil lagos'
     },
-,
     {
       word: 'Francia',
       definition: 'República europea famosa por su cultura, gastronomía y arte',
@@ -146,7 +145,6 @@ export const COUNTRIES_DATA: Record<Letter, WordItem[]> = {
       definition: 'País centroamericano con cultura maya',
       example: 'Guatemala tiene impresionantes ruinas mayas'
     },
-,
     {
       word: 'Grecia',
       definition: 'Cuna de la democracia y la filosofía occidental en el Mediterráneo',

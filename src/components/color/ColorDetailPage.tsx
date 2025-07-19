@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { ColorItem } from '@/types';
+import { ColorItem, Letter } from '@/types';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import { generateBreadcrumbs } from '@/utils/routes';
 
@@ -33,7 +33,7 @@ export default function ColorDetailPage({ color, letter }: ColorDetailPageProps)
   };
 
   // Generar breadcrumbs para la página de detalle de color
-  const breadcrumbs = generateBreadcrumbs('colores', letter as any, color.word);
+  const breadcrumbs = generateBreadcrumbs('colores', letter as Letter, color.word);
 
   return (
     <div className="min-h-screen bg-white">
@@ -81,7 +81,7 @@ export default function ColorDetailPage({ color, letter }: ColorDetailPageProps)
                 </p>
                 <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded">
                   <p className="text-blue-800 italic">
-                    "{color.example}"
+                    "                    &quot;{color.example}&quot;"
                   </p>
                 </div>
               </div>

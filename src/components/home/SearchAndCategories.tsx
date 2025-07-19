@@ -11,9 +11,8 @@ import { getAllFruits } from '@/data/fruits';
 import { getAllFoods } from '@/data/foods';
 import { getAllGeneralWords } from '@/data/general-words';
 import { getAllSurnames } from '@/data/surnames';
-import { SPANISH_ALPHABET } from '@/data/words';
-import { getCategoryPath, getLetterPath } from '@/utils/routes';
-import { Category, Letter, WordItem, ColorItem } from '@/types';
+import { getLetterPath } from '@/utils/routes';
+import { Category, Letter } from '@/types';
 import CopyButton from '@/components/ui/CopyButton';
 
 interface SearchResult {
@@ -235,10 +234,10 @@ export default function SearchAndCategories() {
                 </div>
               ) : results.length > 0 ? (
                 results.map((result, index) => (
-                  <button
+                  <div
                     key={index}
                     onClick={() => handleResultClick(result)}
-                    className="w-full px-6 py-4 text-left hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 border-b border-gray-100 last:border-b-0 group transition-all duration-200"
+                    className="w-full px-6 py-4 text-left hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 border-b border-gray-100 last:border-b-0 group transition-all duration-200 cursor-pointer"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-4">
@@ -267,12 +266,12 @@ export default function SearchAndCategories() {
                         {result.categoryDisplay}
                       </div>
                     </div>
-                  </button>
+                  </div>
                 ))
               ) : query.length > 0 ? (
                 <div className="p-6 text-center text-gray-500">
                   <div className="text-4xl mb-2">🔍</div>
-                  <div className="font-medium">No se encontraron resultados para "{query}"</div>
+                  <div className="font-medium">No se encontraron resultados para &quot;{query}&quot;</div>
                 </div>
               ) : null}
             </div>
@@ -286,7 +285,7 @@ export default function SearchAndCategories() {
           {Object.values(CATEGORIES).map((category) => (
             <button
               key={category.name}
-              onClick={() => handleCategorySelect(category.name)}
+              onClick={() => handleCategorySelect(category.name as Category)}
               className={`group relative backdrop-blur-sm border rounded-2xl p-6 text-center transition-all duration-300 transform hover:-translate-y-1 overflow-hidden ${
                 selectedCategory === category.name
                   ? 'bg-gradient-to-br from-blue-500 to-indigo-600 border-blue-500 text-white shadow-xl scale-105'

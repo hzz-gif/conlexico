@@ -3,6 +3,7 @@ import { CATEGORIES } from '@/data/categories';
 import { SPANISH_ALPHABET } from '@/data/words';
 import { getColorsByLetter } from '@/data/colors';
 import { getCategoryPath, getLetterPath } from '@/utils/routes';
+import { Category } from '@/types';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://conlexico.com';
@@ -45,7 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Category pages
   Object.keys(CATEGORIES).forEach((category) => {
     routes.push({
-      url: `${baseUrl}${getCategoryPath(category as any)}`,
+      url: `${baseUrl}${getCategoryPath(category as Category)}`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
     });
@@ -55,7 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   Object.keys(CATEGORIES).forEach((category) => {
     SPANISH_ALPHABET.forEach((letter) => {
       routes.push({
-        url: `${baseUrl}${getLetterPath(category as any, letter)}`,
+        url: `${baseUrl}${getLetterPath(category as Category, letter)}`,
         lastModified: new Date(),
         changeFrequency: 'weekly',
       });

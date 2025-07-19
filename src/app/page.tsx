@@ -1,14 +1,10 @@
-import Link from 'next/link';
 import StructuredData from '@/components/seo/StructuredData';
 import SearchAndCategories from '@/components/home/SearchAndCategories';
-
 import ColorConJSection from '@/components/home/ColorConJSection';
 import ColorConJInfo from '@/components/home/ColorConJInfo';
-import { getMainCategories } from '@/data/categories';
-import { getCategoryPath } from '@/utils/routes';
+
 
 export default function Home() {
-  const mainCategories = getMainCategories();
 
   return (
     <>

@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import { Category, Letter, WordItem } from '@/types';
+import { Category, Letter } from '@/types';
 import { CATEGORIES } from '@/data/categories';
 import { SPANISH_ALPHABET, getWordsByLetter } from '@/data/words';
 import { getColorsByLetter } from '@/data/colors';
-import { getCategoryPath, getLetterPath } from '@/utils/routes';
-import { getSearchVolume, formatSearchVolume } from '@/utils/seo';
+import { getLetterPath } from '@/utils/routes';
+import { getSearchVolume } from '@/utils/seo';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import StructuredData from '@/components/seo/StructuredData';
 import ColorCard from '@/components/color/ColorCard';
@@ -131,7 +131,7 @@ export default function LetterPage({ category, letter }: LetterPageProps) {
                   {item.example && (
                     <div>
                       <h4 className="text-sm font-semibold text-gray-700 mb-2">Ejemplo de uso:</h4>
-                      <p className="text-gray-600 italic">"{item.example}"</p>
+                      <p className="text-gray-600 italic">&quot;{item.example}&quot;</p>
                     </div>
                   )}
                 </div>

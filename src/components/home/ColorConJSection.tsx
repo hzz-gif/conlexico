@@ -23,7 +23,6 @@ const ColorConJSection = () => {
             <ColorCard
               key={color.slug}
               color={color}
-              category="colores"
               letter="j"
             />
           ))}

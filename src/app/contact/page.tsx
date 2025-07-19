@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Metadata } from 'next';
+import Link from 'next/link';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -30,7 +30,7 @@ export default function ContactPage() {
       await new Promise(resolve => setTimeout(resolve, 1000));
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -114,7 +114,7 @@ export default function ContactPage() {
                   Consulta nuestras preguntas frecuentes para encontrar respuestas inmediatas 
                   a las consultas más comunes.
                 </p>
-                <a
+                <Link
                   href="/faq"
                   className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center"
                 >
@@ -122,7 +122,7 @@ export default function ContactPage() {
                   <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
 

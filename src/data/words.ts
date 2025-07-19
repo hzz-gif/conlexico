@@ -13,7 +13,7 @@ export const SPANISH_ALPHABET: Letter[] = [
 ];
 
 // 词汇数据结构
-type WordsData = Record<Category, Record<Letter, WordItem[]>>;
+type WordsData = Record<Category, Partial<Record<Letter, WordItem[]>>>;
 
 // Datos de vocabulario organizados por categoría y letra
 export const WORDS_DATA: Partial<WordsData> = {
