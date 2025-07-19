@@ -7,6 +7,9 @@ import { generatePageTitle, generatePageDescription, generateKeywords, generateC
 import LetterPage from '@/components/letter/LetterPage';
 import ColorDetailPage from '@/components/color/ColorDetailPage';
 
+// 配置Edge Runtime以支持Cloudflare Pages
+export const runtime = 'edge';
+
 // 类别名称映射（复数形式到单数形式）
 const CATEGORY_SINGULAR_MAP: Record<string, Category> = {
   'color': 'colores',
