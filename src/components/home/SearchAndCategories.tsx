@@ -352,16 +352,18 @@ export default function SearchAndCategories() {
                 key={letter}
                 href={getLetterPath(selectedCategory, letter as Letter)}
                 className="group relative bg-white border-2 border-gray-200 rounded-xl p-3 md:p-4 text-center hover:border-blue-400 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 min-w-[40px] md:min-w-[50px]"
-                rel="nofollow"
               >
                 {/* Background gradient on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
 
-                {/* Letter */}
+                {/* Letter - SEO optimized */}
                 <div className="relative z-10">
-                  <span className="text-lg md:text-2xl font-black text-gray-700 group-hover:text-blue-600 transition-colors duration-300 uppercase">
-                    {letter}
-                  </span>
+                  <div
+                    className="letter-display letter-display-keyboard text-gray-700 group-hover:text-blue-600 transition-colors duration-300"
+                    data-letter={letter.toUpperCase()}
+                  >
+                    <span className="letter-text">{letter}</span>
+                  </div>
                 </div>
 
                 {/* Hover effect indicator */}
@@ -377,16 +379,18 @@ export default function SearchAndCategories() {
                 key={letter}
                 href={getLetterPath(selectedCategory, letter as Letter)}
                 className="group relative bg-white border-2 border-gray-200 rounded-xl p-3 md:p-4 text-center hover:border-blue-400 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 min-w-[40px] md:min-w-[50px]"
-                rel="nofollow"
               >
                 {/* Background gradient on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
 
-                {/* Letter */}
+                {/* Letter - SEO optimized */}
                 <div className="relative z-10">
-                  <span className="text-lg md:text-2xl font-black text-gray-700 group-hover:text-blue-600 transition-colors duration-300 uppercase">
-                    {letter}
-                  </span>
+                  <div
+                    className="letter-display letter-display-keyboard text-gray-700 group-hover:text-blue-600 transition-colors duration-300"
+                    data-letter={letter.toUpperCase()}
+                  >
+                    <span className="letter-text">{letter}</span>
+                  </div>
                 </div>
 
                 {/* Hover effect indicator */}
@@ -402,16 +406,18 @@ export default function SearchAndCategories() {
                 key={letter}
                 href={getLetterPath(selectedCategory, letter as Letter)}
                 className="group relative bg-white border-2 border-gray-200 rounded-xl p-3 md:p-4 text-center hover:border-blue-400 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 min-w-[40px] md:min-w-[50px]"
-                rel="nofollow"
               >
                 {/* Background gradient on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
 
-                {/* Letter */}
+                {/* Letter - SEO optimized */}
                 <div className="relative z-10">
-                  <span className="text-lg md:text-2xl font-black text-gray-700 group-hover:text-blue-600 transition-colors duration-300 uppercase">
-                    {letter}
-                  </span>
+                  <div
+                    className="letter-display letter-display-keyboard text-gray-700 group-hover:text-blue-600 transition-colors duration-300"
+                    data-letter={letter.toUpperCase()}
+                  >
+                    <span className="letter-text">{letter}</span>
+                  </div>
                 </div>
 
                 {/* Hover effect indicator */}

@@ -61,8 +61,9 @@ export default function LetterPage({ category, letter }: LetterPageProps) {
             </div>
           </div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Descubre {categoryInfo.displayName.toLowerCase()} que empiezan con la letra {letter.toUpperCase()}. 
-            Amplía tu vocabulario con definiciones claras y ejemplos de uso.
+            Explora nuestra completa colección de <strong>{singularDisplayNames[category]} con {letter.toUpperCase()}</strong> y descubre
+            todos los {categoryInfo.displayName.toLowerCase()} que empiezan con la letra {letter.toUpperCase()}.
+            Cada <strong>{singularDisplayNames[category]} con {letter.toUpperCase()}</strong> incluye definiciones claras y ejemplos prácticos de uso.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -88,7 +89,10 @@ export default function LetterPage({ category, letter }: LetterPageProps) {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">
-            {category === 'colores' ? 'Colores' : 'Lista de ' + categoryInfo.displayName}
+            {category === 'colores'
+              ? `Colores que empiezan con ${letter.toUpperCase()}`
+              : `${categoryInfo.displayName} que empiezan con ${letter.toUpperCase()}`
+            }
           </h2>
 
           {category === 'colores' && colors.length > 0 ? (
@@ -123,14 +127,14 @@ export default function LetterPage({ category, letter }: LetterPageProps) {
 
                   {item.definition && (
                     <div className="mb-4">
-                      <h4 className="text-sm font-semibold text-gray-700 mb-2">Definición:</h4>
+                      <div className="text-sm font-semibold text-gray-700 mb-2">Definición:</div>
                       <p className="text-gray-600">{item.definition}</p>
                     </div>
                   )}
 
                   {item.example && (
                     <div>
-                      <h4 className="text-sm font-semibold text-gray-700 mb-2">Ejemplo de uso:</h4>
+                      <div className="text-sm font-semibold text-gray-700 mb-2">Ejemplo de uso:</div>
                       <p className="text-gray-600 italic">&quot;{item.example}&quot;</p>
                     </div>
                   )}
@@ -144,34 +148,30 @@ export default function LetterPage({ category, letter }: LetterPageProps) {
       {/* Alphabet Navigation */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
-            Explorar Otras Letras
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">
+            {singularDisplayNames[category]} con otras letras
           </h2>
-          
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3">
+          <h3 className="text-lg text-center text-gray-600 mb-8">
+            {singularDisplayNames[category]} con otras letras
+          </h3>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3">
             {SPANISH_ALPHABET.map((l) => {
               const isCurrentLetter = l === letter;
-              const letterSearchVolume = getSearchVolume(category, l);
-              
+
               return (
                 <Link
                   key={l}
                   href={getLetterPath(category, l)}
-                  className={`relative text-center p-4 rounded-lg transition-all duration-300 ${
+                  className={`block p-3 rounded-lg transition-all duration-300 text-left ${
                     isCurrentLetter
-                      ? 'bg-blue-600 text-white shadow-md'
+                      ? 'bg-blue-600 text-white shadow-md font-bold'
                       : 'bg-white text-gray-700 hover:bg-blue-50 hover:text-blue-600 border border-gray-200 hover:border-blue-300'
                   }`}
-                  rel="nofollow"
                 >
-                  <div className="text-2xl font-bold mb-1">
-                    {l.toUpperCase()}
+                  <div className="text-sm">
+                    {singularDisplayNames[category]} con {l}
                   </div>
-                  {letterSearchVolume && letterSearchVolume > 50000 && (
-                    <div className="text-xs opacity-75">
-                      Popular
-                    </div>
-                  )}
                 </Link>
               );
             })}
@@ -185,23 +185,31 @@ export default function LetterPage({ category, letter }: LetterPageProps) {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-              ¡Bienvenido a {singularDisplayNames[category]} con {letter.toUpperCase()}!
+              ¡Bienvenido a nuestra sección de {singularDisplayNames[category]} con {letter.toUpperCase()}!
             </h2>
+            <p className="text-lg text-gray-600 mb-6">
+              Descubre todo sobre <strong className="text-blue-600">{singularDisplayNames[category]} con {letter.toUpperCase()}</strong> en
+              nuestra plataforma especializada. Cada <strong className="text-blue-600">{singularDisplayNames[category]} con {letter.toUpperCase()}</strong>
+              está cuidadosamente documentado para ofrecerte la mejor experiencia de aprendizaje.
+            </p>
             <div className="prose prose-lg mx-auto text-gray-600">
               {category === 'colores' && (
                 <>
                   <p className="mb-4">
-                    Explora nuestra selección de colores que empiezan con la letra <strong>{letter.toUpperCase()}</strong>.
-                    Cada color incluye su código hexadecimal, valores RGB, definición detallada y ejemplos visuales para ayudarte a identificar y usar estos tonos correctamente.
+                    Nuestra plataforma de <strong className="text-blue-600">{singularDisplayNames[category]} con {letter.toUpperCase()}</strong> te
+                    ofrece la colección más completa de colores que empiezan con la letra <strong>{letter.toUpperCase()}</strong>.
+                    Cada <strong className="text-blue-600">{singularDisplayNames[category]} con {letter.toUpperCase()}</strong> incluye
+                    código hexadecimal, valores RGB y HSL, definición detallada y ejemplos visuales para ayudarte a identificar y usar estos tonos correctamente.
                   </p>
                   <p className="mb-4">
-                    En esta sección podrás:
+                    Con nuestro catálogo de <strong className="text-blue-600">{singularDisplayNames[category]} con {letter.toUpperCase()}</strong> podrás:
                   </p>
                   <ul className="text-left list-disc list-inside space-y-2 mb-4">
-                    <li>Ver códigos de color exactos (HEX, RGB, HSL)</li>
-                    <li>Observar variaciones de tonalidad y saturación</li>
-                    <li>Conocer el origen y significado de cada nombre de color</li>
-                    <li>Encontrar inspiración para proyectos de diseño</li>
+                    <li>Acceder a códigos de color precisos (HEX, RGB, HSL) para cada <strong>{singularDisplayNames[category]} con {letter.toUpperCase()}</strong></li>
+                    <li>Copiar valores directamente para usar en tus proyectos de diseño</li>
+                    <li>Aprender sobre la historia y significado cultural de cada <strong>{singularDisplayNames[category]} con {letter.toUpperCase()}</strong></li>
+                    <li>Encontrar inspiración para crear paletas cromáticas únicas</li>
+                    <li>Explorar variaciones y tonalidades relacionadas con cada <strong>{singularDisplayNames[category]} con {letter.toUpperCase()}</strong></li>
                   </ul>
                 </>
               )}
@@ -209,17 +217,20 @@ export default function LetterPage({ category, letter }: LetterPageProps) {
               {category === 'animales' && (
                 <>
                   <p className="mb-4">
-                    Descubre la fascinante variedad de animales cuyos nombres comienzan con la letra <strong>{letter.toUpperCase()}</strong>.
-                    Cada entrada proporciona información sobre características, hábitat y curiosidades de estas especies.
+                    Explora nuestra completa guía de <strong className="text-blue-600">{singularDisplayNames[category]} con {letter.toUpperCase()}</strong> y
+                    descubre la fascinante variedad de animales cuyos nombres comienzan con la letra <strong>{letter.toUpperCase()}</strong>.
+                    Cada <strong className="text-blue-600">{singularDisplayNames[category]} con {letter.toUpperCase()}</strong> incluye información
+                    detallada sobre características, hábitat y curiosidades de estas especies.
                   </p>
                   <p className="mb-4">
-                    Aquí encontrarás:
+                    En nuestra sección de <strong className="text-blue-600">{singularDisplayNames[category]} con {letter.toUpperCase()}</strong> encontrarás:
                   </p>
                   <ul className="text-left list-disc list-inside space-y-2 mb-4">
-                    <li>Descripciones detalladas de cada especie animal</li>
-                    <li>Información sobre su hábitat natural</li>
-                    <li>Datos curiosos y características distintivas</li>
-                    <li>Ejemplos de uso en contextos cotidianos</li>
+                    <li>Descripciones completas de cada <strong>{singularDisplayNames[category]} con {letter.toUpperCase()}</strong></li>
+                    <li>Información sobre el hábitat natural de cada especie</li>
+                    <li>Datos curiosos y características distintivas de cada <strong>{singularDisplayNames[category]} con {letter.toUpperCase()}</strong></li>
+                    <li>Ejemplos de uso en contextos educativos y cotidianos</li>
+                    <li>Clasificación científica y datos biológicos relevantes</li>
                   </ul>
                 </>
               )}
@@ -227,17 +238,20 @@ export default function LetterPage({ category, letter }: LetterPageProps) {
               {category === 'paises' && (
                 <>
                   <p className="mb-4">
-                    Conoce los países del mundo que inician con la letra <strong>{letter.toUpperCase()}</strong>.
-                    Amplía tus conocimientos geográficos con información sobre ubicación, cultura y características principales de cada nación.
+                    Descubre nuestra enciclopedia de <strong className="text-blue-600">{singularDisplayNames[category]} con {letter.toUpperCase()}</strong> y
+                    conoce todos los países del mundo que inician con la letra <strong>{letter.toUpperCase()}</strong>.
+                    Cada <strong className="text-blue-600">{singularDisplayNames[category]} con {letter.toUpperCase()}</strong> incluye información
+                    detallada sobre ubicación, cultura y características principales de cada nación.
                   </p>
                   <p className="mb-4">
-                    Esta sección te permite:
+                    Nuestra guía de <strong className="text-blue-600">{singularDisplayNames[category]} con {letter.toUpperCase()}</strong> te permite:
                   </p>
                   <ul className="text-left list-disc list-inside space-y-2 mb-4">
-                    <li>Aprender sobre geografía mundial de forma organizada</li>
-                    <li>Conocer datos importantes de cada país</li>
-                    <li>Mejorar tu cultura general geográfica</li>
-                    <li>Practicar pronunciación de nombres de países</li>
+                    <li>Aprender sobre geografía mundial explorando cada <strong>{singularDisplayNames[category]} con {letter.toUpperCase()}</strong></li>
+                    <li>Conocer datos importantes y curiosidades de cada nación</li>
+                    <li>Mejorar tu cultura general geográfica de forma sistemática</li>
+                    <li>Practicar pronunciación correcta de nombres de países</li>
+                    <li>Estudiar capitales, idiomas y características culturales</li>
                   </ul>
                 </>
               )}
@@ -245,17 +259,20 @@ export default function LetterPage({ category, letter }: LetterPageProps) {
               {category === 'frutas' && (
                 <>
                   <p className="mb-4">
-                    Explora el delicioso mundo de las frutas que comienzan con <strong>{letter.toUpperCase()}</strong>.
-                    Aprende sobre sus propiedades nutricionales, sabores característicos y formas de consumo.
+                    Sumérgete en nuestro catálogo de <strong className="text-blue-600">{singularDisplayNames[category]} con {letter.toUpperCase()}</strong> y
+                    explora el delicioso mundo de las frutas que comienzan con <strong>{letter.toUpperCase()}</strong>.
+                    Cada <strong className="text-blue-600">{singularDisplayNames[category]} con {letter.toUpperCase()}</strong> incluye información
+                    sobre propiedades nutricionales, sabores característicos y formas de consumo.
                   </p>
                   <p className="mb-4">
-                    Descubrirás:
+                    Con nuestra guía de <strong className="text-blue-600">{singularDisplayNames[category]} con {letter.toUpperCase()}</strong> descubrirás:
                   </p>
                   <ul className="text-left list-disc list-inside space-y-2 mb-4">
-                    <li>Variedades de frutas y sus características</li>
-                    <li>Beneficios nutricionales y vitaminas</li>
-                    <li>Formas de preparación y consumo</li>
-                    <li>Temporadas de cosecha y disponibilidad</li>
+                    <li>Variedades y características únicas de cada <strong>{singularDisplayNames[category]} con {letter.toUpperCase()}</strong></li>
+                    <li>Beneficios nutricionales, vitaminas y minerales</li>
+                    <li>Formas de preparación, conservación y consumo</li>
+                    <li>Temporadas de cosecha y disponibilidad regional</li>
+                    <li>Recetas y usos culinarios para cada <strong>{singularDisplayNames[category]} con {letter.toUpperCase()}</strong></li>
                   </ul>
                 </>
               )}
@@ -263,17 +280,20 @@ export default function LetterPage({ category, letter }: LetterPageProps) {
               {category === 'comidas' && (
                 <>
                   <p className="mb-4">
-                    Sumérgete en el mundo gastronómico con platos y alimentos que empiezan por <strong>{letter.toUpperCase()}</strong>.
-                    Descubre recetas tradicionales, ingredientes principales y orígenes culturales de cada preparación.
+                    Explora nuestra enciclopedia gastronómica de <strong className="text-blue-600">{singularDisplayNames[category]} con {letter.toUpperCase()}</strong> y
+                    sumérgete en el mundo culinario con platos y alimentos que empiezan por <strong>{letter.toUpperCase()}</strong>.
+                    Cada <strong className="text-blue-600">{singularDisplayNames[category]} con {letter.toUpperCase()}</strong> incluye información
+                    sobre recetas tradicionales, ingredientes principales y orígenes culturales.
                   </p>
                   <p className="mb-4">
-                    En esta colección podrás:
+                    Con nuestra colección de <strong className="text-blue-600">{singularDisplayNames[category]} con {letter.toUpperCase()}</strong> podrás:
                   </p>
                   <ul className="text-left list-disc list-inside space-y-2 mb-4">
-                    <li>Conocer platos típicos de diferentes culturas</li>
-                    <li>Aprender sobre ingredientes y preparaciones</li>
-                    <li>Expandir tu vocabulario culinario</li>
-                    <li>Descubrir nuevas opciones gastronómicas</li>
+                    <li>Conocer platos típicos y preparaciones de cada <strong>{singularDisplayNames[category]} con {letter.toUpperCase()}</strong></li>
+                    <li>Aprender sobre ingredientes, técnicas y métodos de cocción</li>
+                    <li>Expandir tu vocabulario culinario internacional</li>
+                    <li>Descubrir nuevas opciones gastronómicas y sabores</li>
+                    <li>Explorar la historia cultural detrás de cada <strong>{singularDisplayNames[category]} con {letter.toUpperCase()}</strong></li>
                   </ul>
                 </>
               )}
@@ -281,17 +301,20 @@ export default function LetterPage({ category, letter }: LetterPageProps) {
               {category === 'palabras' && (
                 <>
                   <p className="mb-4">
-                    Enriquece tu vocabulario con palabras diversas que inician con la letra <strong>{letter.toUpperCase()}</strong>.
-                    Cada término incluye su definición precisa, ejemplos de uso y contextos apropiados para su aplicación.
+                    Amplía tu vocabulario con nuestro diccionario de <strong className="text-blue-600">{singularDisplayNames[category]} con {letter.toUpperCase()}</strong> y
+                    enriquece tu lenguaje con palabras diversas que inician con la letra <strong>{letter.toUpperCase()}</strong>.
+                    Cada <strong className="text-blue-600">{singularDisplayNames[category]} con {letter.toUpperCase()}</strong> incluye
+                    definición precisa, ejemplos de uso y contextos apropiados para su aplicación.
                   </p>
                   <p className="mb-4">
-                    Esta sección te ofrece:
+                    Nuestra colección de <strong className="text-blue-600">{singularDisplayNames[category]} con {letter.toUpperCase()}</strong> te ofrece:
                   </p>
                   <ul className="text-left list-disc list-inside space-y-2 mb-4">
-                    <li>Definiciones claras y comprensibles</li>
-                    <li>Ejemplos prácticos de uso cotidiano</li>
-                    <li>Sinónimos y palabras relacionadas</li>
-                    <li>Mejora continua de tu expresión verbal</li>
+                    <li>Definiciones claras y comprensibles para cada <strong>{singularDisplayNames[category]} con {letter.toUpperCase()}</strong></li>
+                    <li>Ejemplos prácticos de uso cotidiano y académico</li>
+                    <li>Sinónimos, antónimos y palabras relacionadas</li>
+                    <li>Mejora continua de tu expresión verbal y escrita</li>
+                    <li>Etimología y origen histórico de términos selectos</li>
                   </ul>
                 </>
               )}
@@ -299,23 +322,29 @@ export default function LetterPage({ category, letter }: LetterPageProps) {
               {category === 'apellidos' && (
                 <>
                   <p className="mb-4">
-                    Explora apellidos comunes que comienzan con <strong>{letter.toUpperCase()}</strong>.
-                    Conoce sus orígenes etimológicos, distribución geográfica y significados históricos.
+                    Descubre nuestra base de datos genealógica de <strong className="text-blue-600">{singularDisplayNames[category]} con {letter.toUpperCase()}</strong> y
+                    explora apellidos comunes que comienzan con <strong>{letter.toUpperCase()}</strong>.
+                    Cada <strong className="text-blue-600">{singularDisplayNames[category]} con {letter.toUpperCase()}</strong> incluye información
+                    sobre orígenes etimológicos, distribución geográfica y significados históricos.
                   </p>
                   <p className="mb-4">
-                    Aquí podrás:
+                    Con nuestra investigación de <strong className="text-blue-600">{singularDisplayNames[category]} con {letter.toUpperCase()}</strong> podrás:
                   </p>
                   <ul className="text-left list-disc list-inside space-y-2 mb-4">
-                    <li>Descubrir el origen de apellidos familiares</li>
-                    <li>Conocer su distribución geográfica</li>
-                    <li>Aprender sobre genealogía y linajes</li>
-                    <li>Entender significados históricos y culturales</li>
+                    <li>Descubrir el origen histórico de cada <strong>{singularDisplayNames[category]} con {letter.toUpperCase()}</strong></li>
+                    <li>Conocer la distribución geográfica y frecuencia de uso</li>
+                    <li>Aprender sobre genealogía, linajes y tradiciones familiares</li>
+                    <li>Entender significados históricos y culturales profundos</li>
+                    <li>Explorar variantes regionales y evolución lingüística</li>
                   </ul>
                 </>
               )}
 
               <p>
-                Navega por el alfabeto completo usando los botones superiores o explora otras categorías para continuar expandiendo tus conocimientos.
+                Continúa explorando nuestra plataforma de <strong className="text-blue-600">{singularDisplayNames[category]} con {letter.toUpperCase()}</strong>
+                navegando por el alfabeto completo usando los botones superiores, o descubre otras categorías para continuar expandiendo tus conocimientos.
+                Cada sección de <strong className="text-blue-600">{singularDisplayNames[category]} con {letter.toUpperCase()}</strong> está diseñada
+                para ofrecerte la mejor experiencia educativa posible.
               </p>
             </div>
           </div>

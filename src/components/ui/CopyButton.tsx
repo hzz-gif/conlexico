@@ -9,11 +9,11 @@ interface CopyButtonProps {
   showOnHover?: boolean;
 }
 
-export default function CopyButton({ 
-  text, 
-  className = "", 
-  title = "Copiar", 
-  showOnHover = true 
+export default function CopyButton({
+  text,
+  className = "",
+  title = "Copiar",
+  showOnHover = true
 }: CopyButtonProps) {
   const [copied, setCopied] = useState(false);
 

@@ -31,3 +31,63 @@ body {
     max-width: 70vw;
   }
 }
+
+/* SEO-optimized letter display using CSS pseudo-elements */
+.letter-display {
+  position: relative;
+  display: inline-block;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+}
+
+.letter-display::before {
+  content: attr(data-letter);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: inherit;
+  font-size: inherit;
+  color: inherit;
+  line-height: 1;
+}
+
+/* Hide the actual text content for SEO purposes */
+.letter-display .letter-text {
+  opacity: 0;
+  position: absolute;
+  left: -9999px;
+  font-size: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+
+/* Responsive font sizes for different contexts */
+.letter-display-keyboard::before {
+  font-size: 1.125rem;
+  font-weight: 900;
+}
+
+@media (min-width: 768px) {
+  .letter-display-keyboard::before {
+    font-size: 1.5rem;
+  }
+}
+
+.letter-display-nav::before {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.letter-display-footer::before {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+@media (min-width: 640px) {
+  .letter-display-footer::before {
+    font-size: 1rem;
+  }
+}
+
+

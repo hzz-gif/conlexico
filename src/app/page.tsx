@@ -23,8 +23,8 @@ export default function Home() {
               Color con J
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed font-light">
-              Descubre todos los colores que empiezan con la letra J.
-              <span className="block mt-2 text-lg text-gray-500">Jade, Jaspe, Jacinto y más colores únicos con J.</span>
+              Explora la fascinante colección de <strong>Color con J</strong> y descubre todos los colores que empiezan con la letra J.
+              <span className="block mt-2 text-lg text-gray-500">Desde Jade hasta Jaspe, encuentra cada <strong>Color con J</strong> con definiciones completas y ejemplos prácticos.</span>
             </p>
           </div>
 

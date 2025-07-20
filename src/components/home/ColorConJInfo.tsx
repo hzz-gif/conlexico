@@ -12,14 +12,16 @@ const ColorConJInfo = () => {
           </h2>
           <div className="text-left space-y-4">
             <p className="text-gray-700 leading-relaxed">
-              ¡Bienvenido a <strong className="text-blue-600">Color con J</strong>! Nuestra herramienta especializada
-              te permite encontrar todas las palabras que buscas de manera rápida y eficiente.
+              ¡Bienvenido a <strong className="text-blue-600">Color con J</strong>! Nuestra plataforma especializada en
+              <strong className="text-blue-600"> Color con J</strong> te permite explorar todos los colores que empiezan
+              con la letra J de manera rápida y eficiente.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              Utiliza nuestro buscador para <strong>encontrar las palabras que deseas</strong>,
-              <strong className="text-green-600"> aumenta tus habilidades en juegos de palabras</strong> y
-              <strong className="text-purple-600"> libera todo tu potencial vocabulario</strong>.
-              Descubre colores únicos como Jade, Jaspe y Jacinto, cada uno con definiciones completas y ejemplos prácticos.
+              Cada <strong className="text-blue-600">Color con J</strong> en nuestra base de datos incluye información detallada,
+              desde el vibrante Jade hasta el elegante Jaspe. Nuestro catálogo de <strong className="text-blue-600">Color con J</strong>
+              está diseñado para <strong className="text-green-600">diseñadores, artistas y estudiantes</strong> que buscan
+              <strong className="text-purple-600">ampliar su conocimiento cromático</strong>.
+              Descubre cada <strong className="text-blue-600">Color con J</strong> con definiciones completas, códigos de color y ejemplos prácticos.
             </p>
           </div>
         </div>
@@ -31,9 +33,11 @@ const ColorConJInfo = () => {
           </h2>
           <div className="text-left mb-8">
             <p className="text-gray-700 leading-relaxed">
-              Utiliza nuestro buscador de palabras <strong className="text-blue-600">Color con J</strong> para
-              descifrar un mundo de posibilidades infinitas y explora sin esfuerzo todas las posibles
-              soluciones de palabras que ofrecen las letras que proporcionas.
+              Nuestra herramienta de <strong className="text-blue-600">Color con J</strong> te permite explorar
+              cada tonalidad que comienza con la letra J. Desde el místico Jade hasta el sofisticado Jaspe,
+              cada <strong className="text-blue-600">Color con J</strong> está cuidadosamente catalogado con
+              información técnica precisa. Utiliza nuestro sistema de <strong className="text-blue-600">Color con J</strong>
+              para descubrir paletas cromáticas únicas y ampliar tu vocabulario de colores.
             </p>
           </div>
 
@@ -89,8 +93,9 @@ const ColorConJInfo = () => {
           </h2>
           <div className="text-left space-y-6">
             <p className="text-gray-700 leading-relaxed">
-              ConLéxico ofrece una amplia gama de herramientas de vocabulario más allá de los colores con J.
-              Explora nuestras otras categorías para expandir tu conocimiento:
+              Aunque nos especializamos en <strong className="text-blue-600">Color con J</strong>, ConLéxico ofrece
+              una amplia gama de herramientas de vocabulario. Después de explorar nuestro catálogo completo de
+              <strong className="text-blue-600">Color con J</strong>, descubre otras categorías para expandir tu conocimiento:
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               <Link href="/animal-con-a" className="group bg-gray-50 rounded-lg p-4 hover:bg-blue-50 transition-colors border">
@@ -120,7 +125,7 @@ const ColorConJInfo = () => {
         {/* Por qué elegir Color con J */}
         <div className="bg-white rounded-2xl p-8 shadow-sm">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            ¿Por qué elegir Color con J?
+            ¿Por qué elegir nuestra plataforma Color con J?
           </h2>
           <div className="text-left space-y-4">
             <div className="flex items-start space-x-3">
@@ -128,9 +133,9 @@ const ColorConJInfo = () => {
                 <span className="text-green-600 font-bold text-sm">✓</span>
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900 mb-1">Información Completa</h3>
+                <h3 className="font-semibold text-gray-900 mb-1">Información Completa de Color con J</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Cada color incluye definición, ejemplo de uso y valores técnicos precisos.
+                  Cada Color con J incluye definición detallada, ejemplo de uso y valores técnicos HEX, RGB y HSL precisos.
                 </p>
               </div>
             </div>
@@ -188,9 +193,9 @@ const ColorConJInfo = () => {
                 <span className="text-blue-600 font-bold text-sm">✓</span>
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900 mb-1">Gratuito</h3>
+                <h3 className="font-semibold text-gray-900 mb-1">Acceso Gratuito a Color con J</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Acceso completo y gratuito a toda nuestra base de datos de colores.
+                  Acceso completo y gratuito a toda nuestra base de datos de Color con J y otros colores.
                 </p>
               </div>
             </div>

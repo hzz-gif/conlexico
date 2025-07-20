@@ -64,9 +64,19 @@ export default function ColorCard({ color, letter }: ColorCardProps) {
               <span className="text-white font-mono">{color.hex}</span>
               <button
                 onClick={() => copyToClipboard(color.hex, 'hex')}
-                className="bg-gray-700 hover:bg-gray-600 px-2 py-1 rounded text-xs transition-colors"
+                className="bg-gray-700 hover:bg-gray-600 p-1 rounded text-xs transition-colors"
+                title="Copiar HEX"
+                aria-label="Copiar código HEX"
               >
-                {copiedField === 'hex' ? '✓' : 'Copiar'}
+                {copiedField === 'hex' ? (
+                  <svg className="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                ) : (
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
+                )}
               </button>
             </div>
           </div>
@@ -78,9 +88,19 @@ export default function ColorCard({ color, letter }: ColorCardProps) {
               <span className="text-white font-mono">{formatRgb(color.rgb)}</span>
               <button
                 onClick={() => copyToClipboard(formatRgb(color.rgb), 'rgb')}
-                className="bg-gray-700 hover:bg-gray-600 px-2 py-1 rounded text-xs transition-colors"
+                className="bg-gray-700 hover:bg-gray-600 p-1 rounded text-xs transition-colors"
+                title="Copiar RGB"
+                aria-label="Copiar código RGB"
               >
-                {copiedField === 'rgb' ? '✓' : 'Copiar'}
+                {copiedField === 'rgb' ? (
+                  <svg className="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                ) : (
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
+                )}
               </button>
             </div>
           </div>
@@ -92,9 +112,19 @@ export default function ColorCard({ color, letter }: ColorCardProps) {
               <span className="text-white font-mono">{formatHsl(color.hsl)}</span>
               <button
                 onClick={() => copyToClipboard(formatHsl(color.hsl), 'hsl')}
-                className="bg-gray-700 hover:bg-gray-600 px-2 py-1 rounded text-xs transition-colors"
+                className="bg-gray-700 hover:bg-gray-600 p-1 rounded text-xs transition-colors"
+                title="Copiar HSL"
+                aria-label="Copiar código HSL"
               >
-                {copiedField === 'hsl' ? '✓' : 'Copiar'}
+                {copiedField === 'hsl' ? (
+                  <svg className="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                ) : (
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
+                )}
               </button>
             </div>
           </div>

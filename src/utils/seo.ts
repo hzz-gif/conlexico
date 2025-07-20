@@ -47,44 +47,7 @@ export const generatePageDescription = (category?: Category, letter?: Letter): s
   return `Explora todos los ${seoInfo.plural.toLowerCase()} en español que empiezan con la letra ${letterUpper}. Encuentra ${seoInfo.plural.toLowerCase()} con ${letterUpper} con definiciones, ejemplos y pronunciación en ConLéxico.`;
 };
 
-// 生成关键词
-export const generateKeywords = (category?: Category, letter?: Letter): string[] => {
-  const baseKeywords = ['vocabulario español', 'diccionario visual', 'palabras en español', 'ConLéxico'];
 
-  if (!category) {
-    return [
-      ...baseKeywords,
-      'aprender español',
-      'alfabeto español',
-      'colores en español',
-      'animales en español',
-      'países en español'
-    ];
-  }
-
-  const seoInfo = CATEGORY_SEO_MAP[category];
-  const categoryKeywords = [
-    `${seoInfo.plural.toLowerCase()} en español`,
-    `lista de ${seoInfo.plural.toLowerCase()}`,
-    `${seoInfo.plural.toLowerCase()} por letras`,
-    `vocabulario español ${seoInfo.plural.toLowerCase()}`,
-    `diccionario ${seoInfo.plural.toLowerCase()}`
-  ];
-
-  if (!letter) {
-    return [...baseKeywords, ...categoryKeywords];
-  }
-
-  const letterUpper = letter.toUpperCase();
-  return [
-    ...baseKeywords,
-    ...categoryKeywords,
-    `${seoInfo.plural.toLowerCase()} con ${letterUpper}`,
-    `${seoInfo.plural.toLowerCase()} que empiezan por ${letterUpper}`,
-    `${seoInfo.plural.toLowerCase()} letra ${letterUpper}`,
-    `palabras con ${letterUpper}`
-  ];
-};
 
 // 生成规范URL
 export const generateCanonicalUrl = (category?: Category, letter?: Letter): string => {
@@ -106,7 +69,6 @@ export const generateSEOMetadata = (category?: Category, letter?: Letter): SEOMe
   return {
     title: generatePageTitle(category, letter),
     description: generatePageDescription(category, letter),
-    keywords: generateKeywords(category, letter),
     canonical: generateCanonicalUrl(category, letter),
     ogImage: '/og-image.jpg'
   };

@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { Letter, Category } from '@/types';
 import { SPANISH_ALPHABET } from '@/data/words';
 import { getColorBySlug } from '@/data/colors';
-import { generatePageTitle, generatePageDescription, generateKeywords, generateCanonicalUrl } from '@/utils/seo';
+import { generatePageTitle, generatePageDescription, generateCanonicalUrl } from '@/utils/seo';
 import LetterPage from '@/components/letter/LetterPage';
 import ColorDetailPage from '@/components/color/ColorDetailPage';
 
@@ -64,15 +64,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
       title,
       description,
-      keywords: [
-        `color ${color.word.toLowerCase()}`,
-        `${color.word.toLowerCase()} color`,
-        `colores con ${letter.toUpperCase()}`,
-        `código color ${color.word.toLowerCase()}`,
-        `definición color ${color.word.toLowerCase()}`,
-        'colores en español',
-        'ConLéxico'
-      ],
       alternates: {
         canonical
       },
@@ -109,7 +100,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
       title: generatePageTitle(category, letter as Letter),
       description: generatePageDescription(category, letter as Letter),
-      keywords: generateKeywords(category, letter as Letter),
       alternates: {
         canonical: generateCanonicalUrl(category, letter as Letter)
       },

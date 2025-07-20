@@ -11,7 +11,6 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Color con J - Jade, Jaspe, Jengibre | ConLéxico",
   description: "Descubre todos los colores que empiezan con J en español. Jade, Jaspe, Jengibre y más colores únicos con la letra J. Aprende vocabulario de colores con ConLéxico.",
-  keywords: ["color con j", "colores con j", "jade", "jaspe", "jengibre", "colores español", "vocabulario colores", "palabras con j"],
   authors: [{ name: "ConLéxico" }],
   creator: "ConLéxico",
   publisher: "ConLéxico",

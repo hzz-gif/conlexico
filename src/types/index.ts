@@ -56,7 +56,6 @@ export interface NavItem {
 export interface SEOMetadata {
   title: string;
   description: string;
-  keywords: string[];
   canonical?: string;
   ogImage?: string;
 }

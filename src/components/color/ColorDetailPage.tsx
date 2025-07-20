@@ -98,13 +98,23 @@ export default function ColorDetailPage({ color, letter }: ColorDetailPageProps)
                       <span className="font-mono text-lg">{color.hex}</span>
                       <button
                         onClick={() => copyToClipboard(color.hex, 'hex')}
-                        className="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded text-sm transition-colors"
+                        className="bg-gray-700 hover:bg-gray-600 p-2 rounded text-sm transition-colors"
+                        title="Copiar código HEX"
+                        aria-label="Copiar código HEX"
                       >
-                        {copiedField === 'hex' ? '✓ Copiado' : 'Copiar'}
+                        {copiedField === 'hex' ? (
+                          <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                        ) : (
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                          </svg>
+                        )}
                       </button>
                     </div>
                   </div>
-                  
+
                   {/* RGB */}
                   <div className="flex items-center justify-between">
                     <span className="text-gray-300">RGB:</span>
@@ -112,13 +122,23 @@ export default function ColorDetailPage({ color, letter }: ColorDetailPageProps)
                       <span className="font-mono text-lg">{formatRgb(color.rgb)}</span>
                       <button
                         onClick={() => copyToClipboard(formatRgb(color.rgb), 'rgb')}
-                        className="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded text-sm transition-colors"
+                        className="bg-gray-700 hover:bg-gray-600 p-2 rounded text-sm transition-colors"
+                        title="Copiar código RGB"
+                        aria-label="Copiar código RGB"
                       >
-                        {copiedField === 'rgb' ? '✓ Copiado' : 'Copiar'}
+                        {copiedField === 'rgb' ? (
+                          <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                        ) : (
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                          </svg>
+                        )}
                       </button>
                     </div>
                   </div>
-                  
+
                   {/* HSL */}
                   <div className="flex items-center justify-between">
                     <span className="text-gray-300">HSL:</span>
@@ -126,9 +146,19 @@ export default function ColorDetailPage({ color, letter }: ColorDetailPageProps)
                       <span className="font-mono text-lg">{formatHsl(color.hsl)}</span>
                       <button
                         onClick={() => copyToClipboard(formatHsl(color.hsl), 'hsl')}
-                        className="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded text-sm transition-colors"
+                        className="bg-gray-700 hover:bg-gray-600 p-2 rounded text-sm transition-colors"
+                        title="Copiar código HSL"
+                        aria-label="Copiar código HSL"
                       >
-                        {copiedField === 'hsl' ? '✓ Copiado' : 'Copiar'}
+                        {copiedField === 'hsl' ? (
+                          <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                        ) : (
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                          </svg>
+                        )}
                       </button>
                     </div>
                   </div>

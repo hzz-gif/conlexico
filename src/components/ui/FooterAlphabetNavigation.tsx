@@ -1,9 +1,27 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { SPANISH_ALPHABET } from '@/data/words';
 import { getLetterPath } from '@/utils/routes';
 import { Category } from '@/types';
 
 const FooterAlphabetNavigation = () => {
+  const pathname = usePathname();
+
+  // 从URL路径中提取当前类别
+  const getCurrentCategory = (): Category | undefined => {
+    if (pathname.startsWith('/color-con-')) return 'colores';
+    if (pathname.startsWith('/animal-con-')) return 'animales';
+    if (pathname.startsWith('/fruta-con-')) return 'frutas';
+    if (pathname.startsWith('/pais-con-')) return 'paises';
+    if (pathname.startsWith('/comida-con-')) return 'comidas';
+    if (pathname.startsWith('/palabra-con-')) return 'palabras';
+    if (pathname.startsWith('/apellido-con-')) return 'apellidos';
+    return undefined;
+  };
+
+  const currentCategory = getCurrentCategory();
   // 获取主要类别（按优先级排序）
   const mainCategories = [
     { key: 'colores', name: 'Color', icon: '🎨' },
@@ -14,6 +32,14 @@ const FooterAlphabetNavigation = () => {
     { key: 'palabras', name: 'Palabra', icon: '📝' },
     { key: 'apellidos', name: 'Apellido', icon: '👥' }
   ];
+
+  // 过滤掉当前类别，避免重复
+  const filteredCategories = mainCategories.filter(cat => cat.key !== currentCategory);
+
+  // 如果没有类别要显示，则不渲染组件
+  if (filteredCategories.length === 0) {
+    return null;
+  }
 
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
@@ -27,51 +53,29 @@ const FooterAlphabetNavigation = () => {
           </p>
         </div>
 
-        <div className="space-y-8">
-          {mainCategories.map((category) => (
+        <nav className="space-y-8" role="navigation" aria-label="Navegación alfabética por categorías">
+          {filteredCategories.map((category) => (
             <div key={category.key} className="bg-white rounded-xl p-4 sm:p-6 shadow-sm border border-gray-100">
               <div className="text-lg font-semibold text-gray-900 mb-4">
                 {category.name} con...
               </div>
 
-              {/* Primera fila del alfabeto */}
-              <div className="mb-4">
-                <div className="flex flex-wrap gap-2 justify-start">
-                  {SPANISH_ALPHABET.slice(0, 13).map((letter) => (
-                    <Link
-                      key={letter}
-                      href={getLetterPath(category.key as Category, letter)}
-                      className="inline-flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded text-center transition-all duration-200 hover:scale-105"
-                      rel="nofollow"
-                    >
-                      <span className="text-sm sm:text-base font-medium text-gray-700 hover:text-blue-600">
-                        {letter.toUpperCase()}
-                      </span>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              {/* Segunda fila del alfabeto */}
-              <div>
-                <div className="flex flex-wrap gap-2 justify-start">
-                  {SPANISH_ALPHABET.slice(13).map((letter) => (
-                    <Link
-                      key={letter}
-                      href={getLetterPath(category.key as Category, letter)}
-                      className="inline-flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded text-center transition-all duration-200 hover:scale-105"
-                      rel="nofollow"
-                    >
-                      <span className="text-sm sm:text-base font-medium text-gray-700 hover:text-blue-600">
-                        {letter.toUpperCase()}
-                      </span>
-                    </Link>
-                  ))}
-                </div>
+              {/* Grid de enlaces de texto */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2">
+                {SPANISH_ALPHABET.map((letter) => (
+                  <Link
+                    key={letter}
+                    href={getLetterPath(category.key as Category, letter)}
+                    className="block p-2 text-sm text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all duration-200"
+                    aria-label={`Ver ${category.name.toLowerCase()} con ${letter.toUpperCase()}`}
+                  >
+                    {category.name} con {letter}
+                  </Link>
+                ))}
               </div>
             </div>
           ))}
-        </div>
+        </nav>
 
         {/* Nota informativa */}
         <div className="mt-12 text-center">
