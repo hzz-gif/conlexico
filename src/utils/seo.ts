@@ -58,7 +58,9 @@ export const generateCanonicalUrl = (category?: Category, letter?: Letter): stri
   }
 
   if (!letter) {
-    return `${baseUrl}${getCategoryPath(category)}`;
+    // 不生成单独的类别页面URL，因为这些页面不存在
+    // 返回首页URL作为fallback
+    return baseUrl;
   }
 
   return `${baseUrl}${getLetterPath(category, letter)}`;

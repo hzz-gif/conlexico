@@ -368,6 +368,11 @@ export const COUNTRIES_DATA: Record<Letter, WordItem[]> = {
       word: 'Wallis y Futuna',
       definition: 'Territorio francés en el Pacífico',
       example: 'Wallis y Futuna son islas del Pacífico Sur'
+    },
+    {
+      word: 'Sahara Occidental',
+      definition: 'Territorio disputado en el norte de África',
+      example: 'El Sahara Occidental es un territorio no autónomo'
     }
   ],
   x: [
@@ -382,6 +387,11 @@ export const COUNTRIES_DATA: Record<Letter, WordItem[]> = {
       word: 'Yemen',
       definition: 'País árabe en la península arábiga',
       example: 'Yemen tiene una arquitectura única'
+    },
+    {
+      word: 'Yibuti',
+      definition: 'Pequeño país africano en el Cuerno de África',
+      example: 'Yibuti es estratégico por su ubicación en el Mar Rojo'
     }
   ],
   z: [
@@ -389,6 +399,16 @@ export const COUNTRIES_DATA: Record<Letter, WordItem[]> = {
       word: 'Zambia',
       definition: 'País africano sin salida al mar',
       example: 'Zambia tiene las cataratas Victoria'
+    },
+    {
+      word: 'Zimbabue',
+      definition: 'País africano conocido por sus ruinas antiguas',
+      example: 'Zimbabue tiene las famosas ruinas del Gran Zimbabue'
+    },
+    {
+      word: 'Zanzíbar',
+      definition: 'Archipiélago semiautónomo de Tanzania',
+      example: 'Zanzíbar es famoso por sus especias y playas'
     }
   ]
 };

@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { CATEGORIES } from '@/data/categories';
 import { SPANISH_ALPHABET } from '@/data/words';
 import { getColorsByLetter } from '@/data/colors';
-import { getCategoryPath, getLetterPath } from '@/utils/routes';
+import { getLetterPath } from '@/utils/routes';
 import { Category } from '@/types';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -43,14 +43,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   ];
 
-  // Category pages
-  Object.keys(CATEGORIES).forEach((category) => {
-    routes.push({
-      url: `${baseUrl}${getCategoryPath(category as Category)}`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-    });
-  });
+  // Note: Category pages (like /animal, /fruta, /pais) are not implemented
+  // Only letter-specific pages (like /animal-con-a) are available
+  // Removing category pages from sitemap to avoid 404 errors
 
   // Letter pages for each category
   Object.keys(CATEGORIES).forEach((category) => {

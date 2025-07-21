@@ -389,6 +389,24 @@ export const COLORS_DATA: Record<Letter, ColorItem[]> = {
       rgb: { r: 241, g: 194, b: 50 },
       hsl: { h: 45, s: 87, l: 57 },
       slug: 'jalde'
+    },
+    {
+      word: 'Jazmín',
+      definition: 'Color blanco cremoso como la flor del jazmín',
+      example: 'El vestido jazmín era perfecto para la boda',
+      hex: '#F8F8FF',
+      rgb: { r: 248, g: 248, b: 255 },
+      hsl: { h: 240, s: 100, l: 99 },
+      slug: 'jazmin'
+    },
+    {
+      word: 'Jet',
+      definition: 'Color negro intenso como el azabache',
+      example: 'Su cabello jet contrastaba con su piel pálida',
+      hex: '#343434',
+      rgb: { r: 52, g: 52, b: 52 },
+      hsl: { h: 0, s: 0, l: 20 },
+      slug: 'jet'
     }
   ],
   k: [

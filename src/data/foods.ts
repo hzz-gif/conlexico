@@ -318,6 +318,16 @@ export const FOODS_DATA: Record<Letter, WordItem[]> = {
       word: 'Wasabi',
       definition: 'Condimento japonés picante verde',
       example: 'El wasabi acompaña el sushi'
+    },
+    {
+      word: 'Wantán',
+      definition: 'Pasta china rellena, similar a los ravioles',
+      example: 'Los wantanes se sirven en sopa o fritos'
+    },
+    {
+      word: 'Watercress',
+      definition: 'Berro de agua, verdura de hoja verde picante',
+      example: 'El watercress añade sabor a las ensaladas'
     }
   ],
   x: [
@@ -325,6 +335,16 @@ export const FOODS_DATA: Record<Letter, WordItem[]> = {
       word: 'Xoconostle',
       definition: 'Tuna ácida mexicana usada en cocina',
       example: 'El xoconostle se usa en salsas'
+    },
+    {
+      word: 'Xinxón',
+      definition: 'Jamón curado asturiano de cerdo',
+      example: 'El xinxón es una especialidad de Asturias'
+    },
+    {
+      word: 'Xató',
+      definition: 'Salsa catalana con almendras y ñoras',
+      example: 'El xató acompaña ensaladas de escarola'
     }
   ],
   y: [
@@ -332,6 +352,16 @@ export const FOODS_DATA: Record<Letter, WordItem[]> = {
       word: 'Yogur',
       definition: 'Producto lácteo fermentado',
       example: 'El yogur griego es muy cremoso'
+    },
+    {
+      word: 'Yuca',
+      definition: 'Tubérculo tropical rico en almidón',
+      example: 'La yuca se puede hervir, freír o asar'
+    },
+    {
+      word: 'Yakitori',
+      definition: 'Brochetas japonesas de pollo a la parrilla',
+      example: 'El yakitori se marina en salsa teriyaki'
     }
   ],
   z: [
@@ -339,6 +369,16 @@ export const FOODS_DATA: Record<Letter, WordItem[]> = {
       word: 'Zanahoria',
       definition: 'Verdura anaranjada rica en vitamina A',
       example: 'Las zanahorias son buenas para la vista'
+    },
+    {
+      word: 'Zapallo',
+      definition: 'Calabaza grande sudamericana de pulpa anaranjada',
+      example: 'El zapallo se usa en sopas y guisos'
+    },
+    {
+      word: 'Zarzamora',
+      definition: 'Fruto silvestre negro de sabor agridulce',
+      example: 'Las zarzamoras crecen en arbustos espinosos'
     }
   ]
 };

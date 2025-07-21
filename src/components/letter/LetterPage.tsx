@@ -102,8 +102,28 @@ export default function LetterPage({ category, letter }: LetterPageProps) {
                 <ColorCard key={index} color={color} letter={letter} />
               ))}
             </div>
+          ) : category === 'palabras' ? (
+            // Mostrar grid simple para palabras
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {displayData.map((item, index) => (
+                <div key={index} className="group relative bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all duration-200 hover:border-blue-300">
+                  <div className="relative">
+                    <div className="text-lg font-semibold text-gray-900 capitalize pr-6">
+                      {item.word}
+                    </div>
+                    {/* Copy Button - positioned at top right */}
+                    <CopyButton
+                      text={item.word}
+                      title="Copiar palabra"
+                      showOnHover={true}
+                      className="absolute top-0 right-0 p-1 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
           ) : (
-            // Mostrar lista de palabras tradicional
+            // Mostrar lista de palabras tradicional para otras categorías
             <div className="space-y-6">
               {displayData.map((item, index) => (
                 <div key={index} className="group relative bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">

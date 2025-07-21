@@ -123,9 +123,9 @@ export default function SearchAndCategories() {
     // 添加一般词汇
     const generalWords = getAllGeneralWords();
     generalWords.forEach(word => {
-      const letter = word.word.charAt(0).toLowerCase() as Letter;
+      const letter = word.charAt(0).toLowerCase() as Letter;
       index.push({
-        word: word.word,
+        word: word,
         category: 'palabras',
         categoryDisplay: 'Palabra',
         letter,

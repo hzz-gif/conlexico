@@ -463,6 +463,16 @@ export const ANIMALS_DATA: Record<Letter, WordItem[]> = {
       word: 'Wombat',
       definition: 'Marsupial australiano robusto y excavador',
       example: 'El wombat vive en madrigueras subterráneas'
+    },
+    {
+      word: 'Walabí',
+      definition: 'Marsupial australiano similar al canguro pero más pequeño',
+      example: 'El walabí salta ágilmente por las rocas'
+    },
+    {
+      word: 'Wapití',
+      definition: 'Ciervo grande norteamericano, también conocido como alce americano',
+      example: 'El wapití tiene una cornamenta impresionante'
     }
   ],
   x: [
@@ -470,6 +480,16 @@ export const ANIMALS_DATA: Record<Letter, WordItem[]> = {
       word: 'Xoloitzcuintli',
       definition: 'Perro mexicano sin pelo, también llamado xolo',
       example: 'El xoloitzcuintli era sagrado para los aztecas'
+    },
+    {
+      word: 'Xenopus',
+      definition: 'Rana africana de uñas, usada en investigación científica',
+      example: 'El xenopus es importante para estudios de desarrollo'
+    },
+    {
+      word: 'Xerus',
+      definition: 'Ardilla terrestre africana adaptada a climas áridos',
+      example: 'El xerus vive en las sabanas secas de África'
     }
   ],
   y: [
@@ -477,6 +497,16 @@ export const ANIMALS_DATA: Record<Letter, WordItem[]> = {
       word: 'Yak',
       definition: 'Bovino peludo de las montañas asiáticas',
       example: 'El yak vive en las altas montañas del Tíbet'
+    },
+    {
+      word: 'Yacaré',
+      definition: 'Caimán sudamericano, reptil semiacuático',
+      example: 'El yacaré se encuentra en los humedales de Argentina'
+    },
+    {
+      word: 'Yaguareté',
+      definition: 'Jaguar, el felino más grande de América',
+      example: 'El yaguareté es un poderoso depredador de la selva'
     }
   ],
   z: [

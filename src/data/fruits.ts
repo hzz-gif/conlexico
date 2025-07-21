@@ -273,6 +273,16 @@ export const FRUITS_DATA: Record<Letter, WordItem[]> = {
       word: 'Rambután',
       definition: 'Fruto tropical asiático con cáscara peluda',
       example: 'El rambután tiene un sabor dulce y refrescante'
+    },
+    {
+      word: 'Remolacha',
+      definition: 'Raíz comestible de color rojo intenso, rica en azúcares',
+      example: 'La remolacha se usa en ensaladas y jugos'
+    },
+    {
+      word: 'Ruibarbo',
+      definition: 'Planta de tallos rojos comestibles, de sabor ácido',
+      example: 'El ruibarbo se usa para hacer tartas y mermeladas'
     }
   ],
   s: [
@@ -280,6 +290,16 @@ export const FRUITS_DATA: Record<Letter, WordItem[]> = {
       word: 'Sandía',
       definition: 'Fruto grande verde por fuera y rojo por dentro',
       example: 'La sandía es perfecta para el calor'
+    },
+    {
+      word: 'Saúco',
+      definition: 'Pequeña baya negra de sabor dulce y propiedades medicinales',
+      example: 'Las bayas de saúco se usan para hacer jarabes'
+    },
+    {
+      word: 'Serbal',
+      definition: 'Fruto pequeño y rojizo del árbol serbal, ligeramente amargo',
+      example: 'Los frutos del serbal atraen a muchas aves'
     }
   ],
   t: [

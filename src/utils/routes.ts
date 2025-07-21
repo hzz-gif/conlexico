@@ -14,6 +14,8 @@ const CATEGORY_SINGULAR_MAP: Record<Category, string> = {
 };
 
 // 生成类别页面路径
+// 注意：这些路径对应的页面不存在，项目只支持 category-con-letter 格式
+// 此函数保留仅为了向后兼容，不应在新代码中使用
 export const getCategoryPath = (category: Category): string => {
   const singular = CATEGORY_SINGULAR_MAP[category];
   return `/${singular}`;
@@ -41,6 +43,8 @@ export const getCategoryLetterPaths = (category: Category): string[] => {
 };
 
 // 获取所有类别页面路径
+// 注意：这些路径对应的页面不存在，项目只支持 category-con-letter 格式
+// 此函数保留仅为了向后兼容，不应在新代码中使用
 export const getAllCategoryPaths = (): string[] => {
   return Object.keys(CATEGORIES).map(category => getCategoryPath(category as Category));
 };
@@ -104,12 +108,8 @@ export const generateBreadcrumbs = (category?: Category, letter?: Letter, colorN
         });
       }
     } else {
-      // 只有类别，使用单数形式
-      breadcrumbs.push({
-        label: singular,
-        href: getCategoryPath(category),
-        current: true
-      });
+      // 只有类别时，不添加面包屑，因为没有单独的类别页面
+      // 项目只支持 category-con-letter 格式的页面
     }
   }
 
@@ -140,12 +140,14 @@ export const getRelatedPages = (category: Category, letter?: Letter): { label: s
       }
     });
   } else {
-    // 添加其他类别
+    // 不添加单独的类别页面，因为项目只支持 category-con-letter 格式
+    // 可以添加其他类别的热门字母页面
     Object.keys(CATEGORIES).forEach(cat => {
       if (cat !== category) {
+        // 添加该类别的第一个字母页面作为示例
         related.push({
-          label: CATEGORIES[cat as Category].displayName,
-          href: getCategoryPath(cat as Category)
+          label: `${CATEGORIES[cat as Category].displayName} con A`,
+          href: getLetterPath(cat as Category, 'a')
         });
       }
     });

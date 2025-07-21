@@ -302,7 +302,13 @@ export const getWordsByLetter = (category: Category, letter: Letter): WordItem[]
     case 'frutas':
       return getFruitsByLetter(letter);
     case 'palabras':
-      return getGeneralWordsByLetter(letter);
+      // Para palabras generales, convertir strings a WordItem format
+      const generalWords = getGeneralWordsByLetter(letter);
+      return generalWords.map(word => ({
+        word,
+        definition: '',
+        example: ''
+      }));
     case 'comidas':
       return getFoodsByLetter(letter);
     case 'apellidos':

@@ -65,6 +65,16 @@ export const SURNAMES_DATA: Record<Letter, WordItem[]> = {
       word: 'Espinoza',
       definition: 'Apellido que hace referencia a un lugar espinoso',
       example: 'Carmen Espinoza es la alcaldesa'
+    },
+    {
+      word: 'Estrada',
+      definition: 'Apellido que significa "camino empedrado"',
+      example: 'Los Estrada tienen una empresa de construcción'
+    },
+    {
+      word: 'Escudero',
+      definition: 'Apellido que hace referencia al oficio de escudero',
+      example: 'La familia Escudero tiene tradición militar'
     }
   ],
   f: [
@@ -113,6 +123,16 @@ export const SURNAMES_DATA: Record<Letter, WordItem[]> = {
       word: 'Iglesias',
       definition: 'Apellido que hace referencia a las iglesias',
       example: 'Julio Iglesias es un cantante famoso'
+    },
+    {
+      word: 'Ibáñez',
+      definition: 'Apellido vasco que significa "hijo de Juan"',
+      example: 'Vicente Ibáñez fue un escritor valenciano'
+    },
+    {
+      word: 'Izquierdo',
+      definition: 'Apellido que hace referencia a la dirección izquierda',
+      example: 'Los Izquierdo viven en la casa de la esquina'
     }
   ],
   j: [
@@ -120,6 +140,16 @@ export const SURNAMES_DATA: Record<Letter, WordItem[]> = {
       word: 'Jiménez',
       definition: 'Apellido patronímico derivado de Jimeno',
       example: 'Juan Ramón Jiménez ganó el Nobel'
+    },
+    {
+      word: 'Juárez',
+      definition: 'Apellido patronímico derivado de Suárez',
+      example: 'Benito Juárez fue presidente de México'
+    },
+    {
+      word: 'Jara',
+      definition: 'Apellido que hace referencia a la planta jara',
+      example: 'Víctor Jara fue un cantautor chileno'
     }
   ],
   k: [
@@ -127,6 +157,16 @@ export const SURNAMES_DATA: Record<Letter, WordItem[]> = {
       word: 'Klein',
       definition: 'Apellido alemán que significa "pequeño"',
       example: 'Calvin Klein es un diseñador famoso'
+    },
+    {
+      word: 'Kramer',
+      definition: 'Apellido alemán que significa "comerciante"',
+      example: 'Los Kramer emigraron de Alemania'
+    },
+    {
+      word: 'Keller',
+      definition: 'Apellido alemán que significa "bodeguero"',
+      example: 'Helen Keller fue una escritora famosa'
     }
   ],
   l: [
@@ -163,6 +203,16 @@ export const SURNAMES_DATA: Record<Letter, WordItem[]> = {
       word: 'Navarro',
       definition: 'Apellido que indica origen en Navarra',
       example: 'Los Navarro vinieron del norte de España'
+    },
+    {
+      word: 'Núñez',
+      definition: 'Apellido patronímico derivado de Nuño',
+      example: 'Rafael Núñez fue presidente de Colombia'
+    },
+    {
+      word: 'Nieto',
+      definition: 'Apellido que hace referencia a la descendencia',
+      example: 'Los Nieto tienen una gran familia'
     }
   ],
   ñ: [
